@@ -55,8 +55,22 @@
                     ["Sad Song 1", "Sad Song 2", "Sad Song 3"],
                     ["Surprise Song 1", "Surprise Song 2", "Surprise Song 3"]
                 ];
+
+                var playlists = [
+                    "Angry",
+                    "Contempt",
+                    "Disgust",
+                    "Fear",
+                    "https://open.spotify.com/embed?uri=spotify:user:12185047050:playlist:1llkez7kiZtBeOw5UjFlJq",
+                    "Neutral",
+                    "Sad",
+                    "Surprise"
+                ];
+                /*
                 for (let i = 0; i < songs[max].length; i++)
                     document.getElementById("song list").innerHTML += "<li> " + songs[max][i] + "</li>";
+                */
+
             })
             .fail(function () {
                 alert("error");
@@ -73,9 +87,15 @@
     <ol id="song list"></ol>
 </body>
 
-<p align="center"></p>
-<iframe src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:6AV1SULGwX3OFyYzoZqokN" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
+<p align="center">
 
+    <iframe src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:6AV1SULGwX3OFyYzoZqokN" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
 
+</p>
 
+<iframe src="https://open.spotify.com/embed?uri=spotify:user:12185047050:playlist:1llkez7kiZtBeOw5UjFlJq" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
+<!--
+<iframe src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:6AV1SULGwX3OFyYzoZqokN" width="450" height="80" frameborder="0" allowtransparency="true"></iframe>
+    -->
 </html>
+
