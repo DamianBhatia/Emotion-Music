@@ -4,6 +4,13 @@
     <title>Emotion Music</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <style>
+        h1 {
+            font-family: 'Bitter', serif;
+            font-size: 70px;
+            font-weight: normal;
+            line-height: 80px;
+            margin-top: 170px;
+        }
         body{
             text-align: center;
             color: white;
@@ -11,22 +18,29 @@
         ::placeholder {
             color: white;
         }
+        a {
+            color: white;
+        }
 
         input[type=text] {
             width: 50%;
+            height: 60px;
             box-sizing: border-box;
             border: 3px solid white;
             border-radius: 300px;
-            font-size: 15px;
+            font-size: 16px;
             color: white;
             background-color: transparent;
             background-position: 10px 10px;
             background-repeat: no-repeat;
             padding: 12px 20px 12px 20px;
             text-align: center;
-            margin-top: 200px;
         }
 
+        .input:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
         form {
             text-align: center;
         }
@@ -51,7 +65,6 @@
 
             .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
                 color: white;
-                border-color: white;
                 background-color: rgba(255, 255, 255, 0.2);
             }
 
@@ -61,17 +74,18 @@
             font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .btn-xl {
-            font-size: 11px;
+            font-size: 15x;
             padding: 15px 45px;
         }
     </style>
 </head>
 
 <body>
+    <h1> Emotion Music </h1>
     <form>
         <input type="text" id="Image URL" placeholder="Enter URL"> <br>
 
@@ -111,9 +125,21 @@
                     ["Contempt Song 1", "Contempt Song 2", "Contempt Song 3"],
                     ["Disgust Song 1", "Disgust Song 2", "Disgust Song 3"],
                     ["Fear Song 1", "Fear Song 2", "Fear Song 3"],
-                    ["Happy Song 1", "Happy Song 2", "Happy Song 3"],
-                    ["Neutral Song 1", "Neutral Song 2", "Neutral Song 3"],
-                    ["Sad Song 1", "Sad Song 2", "Sad Song 3"],
+                    [   // Happy Songs
+                        ["Happy, by Pharrell Williams", "https://www.youtube.com/watch?v=ZbZSe6N_BXs"],
+                        ["Uptown Funk, by Mark Ronson", "https://www.youtube.com/watch?v=OPf0YbXqDm0"], 
+                        ["Mr. Blue Sky, by ELO", "https://www.youtube.com/watch?v=QAOMIH7cgh0"]
+                    ],
+                    [   // Neutral Songs
+                        ["Man's Not Hot, by Big Shaq", "https://www.youtube.com/watch?v=2PjNsPMKqSA"],
+                        ["Shape of You, by Ed Sheeran", "https://www.youtube.com/watch?v=TRkIdcuXZQg"],
+                        ["Bills, by Lunchmoney Lewis", "https://www.youtube.com/watch?v=eu5JqWQGJoo"]
+                    ],
+                    [   // Sad Songs
+                        ["The A Team, by Ed Sheeran", "https://www.youtube.com/watch?v=X16hfWaZIM4"],
+                        ["Take Me To Chruch, by Hozier", "https://www.youtube.com/watch?v=t0imaSCnSuA"],
+                        ["Say Something, by A Great Big World", "https://www.youtube.com/watch?v=BmErRm-vApI"]
+                    ],
                     ["Surprise Song 1", "Surprise Song 2", "Surprise Song 3"]
                 ];
                 var playlists = [
@@ -127,9 +153,10 @@
                     "Surprise"
                 ];
 
-                for (let i = 0; i < songs[max].length; i++)
-                    document.getElementById("song list").innerHTML += "<li> " + songs[max][i] + "</li>";
-
+                for (let i = 0; i < songs[max].length; i++) {
+                    var listItem = songs[max][i][0] + " <a href=" + songs[max][i][1] + " target='blank'>(Link)</a>";
+                    document.getElementById("song list").innerHTML += "<li> " + listItem + "</li>";
+                }
             })
             .fail(function () {
                 alert("error");
@@ -145,11 +172,4 @@
      <ul id="song list" style="list-style: none;"></ul>
 
 </body>
-<!--
-<p align="center">
-    <iframe src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:6AV1SULGwX3OFyYzoZqokN" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
-</p>
-<iframe src="https://open.spotify.com/embed?uri=spotify:user:12185047050:playlist:1llkez7kiZtBeOw5UjFlJq" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
-<iframe src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:6AV1SULGwX3OFyYzoZqokN" width="450" height="80" frameborder="0" allowtransparency="true"></iframe>
--->
 </html>
