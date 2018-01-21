@@ -4,29 +4,20 @@
     <title>Emotion Music</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <style>
-        ::placeholder {
-            color: white;
-        }
         input[type=text] {
-            width: 50%;
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
             box-sizing: border-box;
-            border: 3px solid white;
-            border-radius: 300px;
-            font-size: 15px;
-            color: white;
-            background-color: transparent;
-            background-position: 10px 10px;
-            background-repeat: no-repeat;
-            padding: 12px 20px 12px 20px;
-            text-align: center;
-            margin-top: 200px;
-        }
-        form {
-            text-align: center;
-        }
-        input, select, textarea {
+            border: none;
+            background-color: #3CBC8D;
             color: white;
         }
+
+            input[type=text]:focus {
+                border: 3px solid #fff;
+            }
+
         body {
             background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/bNjlZZF/animated-background-with-musical-notes-music-notes-flowing-flying-stream-of-music-notes_vjn8czaye__F0000.png");
             -webkit-background-size: cover;
@@ -35,47 +26,59 @@
             background-size: cover;
         }
 
-        .btn-outline {
-            color: white;
-            border: 3px solid;
-            border-color: white;
-        }
-
-            .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
-                color: white;
-                border-color: white;
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-
-        .btn {
-            background-color: Transparent;
-            border-radius: 300px;
-            font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
-
         .btn-xl {
             font-size: 11px;
             padding: 15px 45px;
         }
 
+        new-age.min.css:1 .btn {
+            border-radius: 300px;
+            font-family: Lato,Helvetica,Arial,sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        new-age.min.css:1 .btn-outline {
+            color: #fff;
+            border: 1px solid;
+            border-color: #fff;
+        }
+
+        _buttons.scss:8 .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
     </style>
 </head>
 
 <body>
+
     <form>
-        <input type="text" id="Image URL" placeholder="Enter URL"> <br>
-        <button class="btn btn-outline btn-xl"> Upload </button>
+        Enter URL Here:<br>
+        <input type="text" id="Image URL"><br>
     </form>
+
+    <button class="btn btn-outline btn-xl"> Upload </button>
 
     <script type="text/javascript">
 
-    document.querySelector('.btn').addEventListener('click', function () {
+    document.querySelector('.btn-upload').addEventListener('click', function () {
 
         var input = document.getElementById("Image URL").value;
-        alert(input);
+
         $(function () {
             var params = {
 
@@ -122,10 +125,10 @@
                     "Sad",
                     "Surprise"
                 ];
-                
+                /*
                 for (let i = 0; i < songs[max].length; i++)
                     document.getElementById("song list").innerHTML += "<li> " + songs[max][i] + "</li>";
-                
+                */
 
             })
             .fail(function () {
@@ -140,10 +143,7 @@
 
     </p>
 
-    <ol id="song list">
-
-    </ol>
-
+    <ol id="song list"></ol>
 </body>
 <!--
 <p align="center">
@@ -157,4 +157,3 @@
 <iframe src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:6AV1SULGwX3OFyYzoZqokN" width="450" height="80" frameborder="0" allowtransparency="true"></iframe>
 -->
 </html>
-
