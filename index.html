@@ -4,9 +4,14 @@
     <title>Emotion Music</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <style>
+        body{
+            text-align: center;
+            color: white;
+        }
         ::placeholder {
             color: white;
         }
+
         input[type=text] {
             width: 50%;
             box-sizing: border-box;
@@ -21,12 +26,15 @@
             text-align: center;
             margin-top: 200px;
         }
+
         form {
             text-align: center;
         }
+
         input, select, textarea {
             color: white;
         }
+
         body {
             background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/bNjlZZF/animated-background-with-musical-notes-music-notes-flowing-flying-stream-of-music-notes_vjn8czaye__F0000.png");
             -webkit-background-size: cover;
@@ -53,34 +61,33 @@
             font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .btn-xl {
             font-size: 11px;
             padding: 15px 45px;
         }
-
     </style>
 </head>
 
 <body>
     <form>
         <input type="text" id="Image URL" placeholder="Enter URL"> <br>
-        <button class="btn btn-outline btn-xl"> Upload </button>
+
     </form>
 
+    <div style="text-align:center;">
+        <button class="btn btn-outline btn-xl"> Upload </button>
+    </div>
+
     <script type="text/javascript">
-
     document.querySelector('.btn').addEventListener('click', function () {
-
         var input = document.getElementById("Image URL").value;
-        alert(input);
+
         $(function () {
             var params = {
-
             };
-
             $.ajax({
                 url: "https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize",
                 beforeSend: function (xhrObj) {
@@ -97,10 +104,8 @@
                     if (data[0].scores[emotions[i]] > data[0].scores[emotions[max]])
                         max = i;
                 }
-
                 document.getElementById("message").innerHTML = "Your emotion is " + emotions[max] + "! Here are some songs that match your current emotion:";
                 console.log(data);
-
                 var songs = [
                     ["Angry Song 1", "Angry Song 2", "Angry Song 3"],
                     ["Contempt Song 1", "Contempt Song 2", "Contempt Song 3"],
@@ -111,7 +116,6 @@
                     ["Sad Song 1", "Sad Song 2", "Sad Song 3"],
                     ["Surprise Song 1", "Surprise Song 2", "Surprise Song 3"]
                 ];
-
                 var playlists = [
                     "Angry",
                     "Contempt",
@@ -122,10 +126,9 @@
                     "Sad",
                     "Surprise"
                 ];
-                
+
                 for (let i = 0; i < songs[max].length; i++)
                     document.getElementById("song list").innerHTML += "<li> " + songs[max][i] + "</li>";
-                
 
             })
             .fail(function () {
@@ -133,28 +136,20 @@
             });
         });
     });
-
     </script>
 
     <p id="message">
 
     </p>
 
-    <ol id="song list">
-
-    </ol>
+    <ol id="song list"></ol>
 
 </body>
 <!--
 <p align="center">
-
     <iframe src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:6AV1SULGwX3OFyYzoZqokN" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
-
 </p>
-
 <iframe src="https://open.spotify.com/embed?uri=spotify:user:12185047050:playlist:1llkez7kiZtBeOw5UjFlJq" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
-
 <iframe src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:6AV1SULGwX3OFyYzoZqokN" width="450" height="80" frameborder="0" allowtransparency="true"></iframe>
 -->
 </html>
-
