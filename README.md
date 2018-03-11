@@ -1,3 +1,7 @@
 # Emotion-Music
 
-A hackathon project for U of T hacks 2018. You enter a photo of yourself as input, and the website recommends music for you based on your current mood.
+My first hackathon project :)
+
+You give the website a photo of yourself as input, and it recommends music for you based on your current mood (happy, sad, angry, etc.)
+
+Credits to my hackathon teammates Arielle Shannon, Taaha Hassan, and Damian Bhatia, as well as additional help from Steven Mai and Arif Aulakh.
